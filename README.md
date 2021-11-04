@@ -16,7 +16,7 @@ Check if function has been created:
 aws lambda list-functions --endpoint-url http://lambda.localhost.localstack.cloud:4566
 ```
 
-Invoke the function (currently does not work...!)
+Invoke the function!
 
 ```bash
 aws lambda invoke --function-name lambda_using_terraform --endpoint-url http://lambda.localhost.localstack.cloud:4566 response.json
