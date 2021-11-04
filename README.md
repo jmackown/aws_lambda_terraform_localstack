@@ -10,29 +10,14 @@ terraform init
 terraform apply
 ```
 
-### Problems
+Check if function has been created:
 
-Terraform claims to have created the lambda function correctly, 
-but when I try to list or get the functions I get nothing:
-
-###### Get:
 ```bash
-aws lambda --endpoint http://localhost:4566 get-function --function-name welcome
+aws lambda list-functions --endpoint-url http://lambda.localhost.localstack.cloud:4566
 ```
 
-returns `An error occurred (ResourceNotFoundException) when calling the GetFunction operation: Function not found: arn:aws:lambda:eu-west-1:000000000000:function:welcome
-`
+Invoke the function (currently does not work...!)
 
-###### List
 ```bash
-aws lambda list-functions --endpoint-url http://localhost.localstack.cloud:4566
+aws lambda invoke --function-name lambda_using_terraform --endpoint-url http://lambda.localhost.localstack.cloud:4566 response.json
 ```
-
-returns 
-`{
-    "Functions": []
-}
-`
-
-
-Arrrrrggg
